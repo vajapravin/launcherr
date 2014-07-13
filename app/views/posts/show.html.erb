@@ -1,0 +1,156 @@
+
+     <title><%= @post.project_name %>| Launcherr </title>
+      
+
+      <!-- PAGEBODY -->
+      <div class="page-body"></div>
+
+        <!-- Cover Photo -->
+        <div class="top-area">
+          <%=image_tag @post.coverimage.url %></div>
+        </div>
+          <ul class="socialmedia-widget social-share">
+            <li class="facebook">
+              <a href="">Facebook</a>
+            </li>
+            <li class="twitter">
+              <a href="">Tweet</a>
+            </li>
+            <li class="googleplus">
+              <a href="">Google Plus</a>
+            </li>
+            <li class="pinterest">
+              <a href="">Pinterest</a>
+            </li>
+          </ul><br>
+        </div>
+
+
+        <!-- MAIN PITCH SECTION -->
+        <section id="portfolio">
+          <div id="portfolio-singlee" class="section-innere">
+            <div class="wrapper clearfix">
+
+              <div class="main-content left-float">
+                <!-- VIDEO SECTION -->
+                <div class="entry-media portfolio-media">
+                  <iframe width="400" height="230" src= "<%= @post.youtube_id %>.url"
+                                     frameborder="1" scrolling="no"> </iframe>
+                                     
+                </div>
+                <!-- MAIN DESCRIPTION -->
+                <br> <h5><strong>About <%= @post.project_name %> </h6></strong>
+<br><%= @post.full_pitch %>
+<br>
+
+              <!-- COMPENSATION --></p>
+              <h6><strong> How  You Will Be Compensated</strong></h6>
+              <p><%= @post.compensation_method %></p>
+
+                <!-- What Can Project Author Bring to the Table?-->                
+                </p>
+              <h6><strong> What can I bring to the table? </strong></h6>
+
+              <h6><strong><%= @post.url %></strong>
+              <p><%= @post.to_the_table %>
+                <br> <br> 
+                 </div>
+
+                <!-- END .main-content -->
+
+                <!-- PROJECT INFO // SIDEBAR -->
+              </p>
+              <aside class="right-float">
+                            
+                <!-- Start Location -->
+                <div class="entry-content portfolio-content">
+
+
+                  <!-- Skill -->
+                   <div class="entry-content portfolio-content"> <h4><strong> Skills </strong></h4></div>
+                    <ul>
+                    <%#=raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %>
+                    <% @post.tag_list.each do |t|  %>
+                    <li><%= t %></li>
+                    <% end %>
+
+
+                  </ul>
+                  <!-- TEAM NEEDED -->
+               <h4><strong><%= @post.project_name %></strong></h4></div><br>
+                                  <div class="entry-content portfolio-content"> <h4><strong> Team Needed</strong></h4></div>
+
+                  <ul>
+                    • Architect
+                  </ul>
+                  <ul>
+                    • Timber Specialist
+                  </ul>
+                  <ul>
+                    • 
+                  Plumber
+                  </ul>
+                  <ul>
+                    • Electrician
+              </ul>
+                  <ul>
+                    <p>
+                    • Handyman                  </p><br>
+                  </ul>
+                                  <br>
+                                  <a data-toggle="modal" href="#myModal" class="sr-button sr-button5 big-button">JØIN TEAM</a></p>
+                
+                 
+                  <h6> <i class="fa fa-map-marker"> </i> <%= @post.location %></h6>
+                  <h6> <i class="fa fa-link"> </i> <%= @post.url %></h6>
+                  <h6> <i class="fa fa-clock-o"> </i> <%= @post.created_at %></i>.</h6><br><br>
+                  <p><!-- END LOCATION -->
+                                  
+                        </p><br><br><br>
+                                  
+                                  
+                                
+                    <!-- END COUNTDOWN -->
+                    
+              
+                        
+
+                  <!-- START TAGS  -->
+                                     <div class="widget tag-widget">
+                      
+                       
+                   
+                </div> <br><br>
+
+                
+                                
+                    <!-- End tag-widget -->
+                                     
+                                
+                               
+                                
+                            <!-- SIDEBAR -->
+
+      </div>
+            <!-- END .wrapper -->
+
+            <div class="spacer spacer-big"></div>
+
+          </div>
+          <div class="modal hide" id="myModal"><!-- note the use of "hide" class -->
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3>Join <%= @post.project_name %></h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="sr-button sr-button2 mini-button" data-dismiss="modal">Bail</a><!-- note the use of "data-dismiss" -->
+    <a href="#" class="sr-button sr-button5 mini-button">Join Team</a>
+  </div>
+</div>​
+          <!-- END #portfolio-single .section-inner --><!-- END SECTION #portfolio-->
+        <!-- PORTFOLIO SECTION -->
+
+        <!-- FOOTER -->

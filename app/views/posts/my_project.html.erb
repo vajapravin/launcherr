@@ -1,0 +1,50 @@
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Post %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:project_name) %></th>
+      <th><%= model_class.human_attribute_name(:quick_pitch) %></th>
+      <th><%= model_class.human_attribute_name(:full_pitch) %></th>
+      <th><%= model_class.human_attribute_name(:youtube_id) %></th>
+      <th><%= model_class.human_attribute_name(:to_the_table) %></th>
+      <th><%= model_class.human_attribute_name(:compensation_method) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <th><%= model_class.human_attribute_name(:tags) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.id %></td>
+        <td><%= post.project_name %></td>
+        <td><%= post.quick_pitch %></td>
+        <td><%= post.full_pitch %></td>
+        <td><%= post.youtube_id %></td>
+        <td><%= post.to_the_table %></td>
+        <td><%= post.compensation_method %></td>
+        <td><%= post.location %></td>
+        <td><%= post.tags %></td>
+        <td><%=l post.created_at, format: :long %></td>
+        <td>
+          <%= link_to post_path(post), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to  post_path(post), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_post_path,
+            :class => 'btn btn-primary' %>

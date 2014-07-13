@@ -1,0 +1,9 @@
+<br><br><h2> Messages Are </h2>
+<% if @messages.nil? %>
+<h4>----No Messages --></h4>
+<%else%>
+<% @messages.each do |m| %>
+    <%= m.body %>
+    <%= m.topic %><br>
+<% end %>
+<% end %>

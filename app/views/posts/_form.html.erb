@@ -1,0 +1,79 @@
+ <div class="page-body">
+ <div id="portfolio-singlee" class="section-innere">
+          <div class="wrapper clearfix">
+
+     
+                
+
+  <%= form_for @post, :html => { :class => 'form-horizontal form-model' , :multipart => true } do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+
+
+    <%= f.label :project_name, :class => 'control-label col-md-2' %>
+      <%= f.text_field :project_name, :class => 'text-field form-control' %><br><br>
+  
+ 
+    <%= f.label :quick_pitch, :class => 'control-label col-md-2' %>
+    
+      <%= f.text_field :quick_pitch, :class => 'text-field form-control' %><br><br>
+   
+    <%= f.label :coverimage, :class => 'control-label col-md-2' %>
+    
+      <%= f.file_field :coverimage, :class => 'text-field form-control' %><br><br>
+ 
+
+    <%= f.label :logoimage, :class => 'control-label col-md-2' %>
+   
+      <%= f.file_field :logoimage, :class => 'text-field form-control' %><br><br>
+    
+
+    <%= f.label :full_pitch, :class => 'control-label col-md-2' %>
+  
+      <%= f.text_area :full_pitch, :class => 'text-field form-control' %><br><br>
+
+    <%= f.label :Skills, "Tags (separated by commas)" , :class => 'control-label col-md-2' %>
+  
+      <%= f.text_field :tag_list, :class => 'text-field form-control' %><br><br>
+  
+    <%= f.label :youtube_id, :class => 'control-label col-md-2' %>
+    
+      <%= f.text_field :youtube_id, :class => 'text-field form-control' %><br><br>
+   
+     <%= f.label :url, :class => 'control-label col-md-2' %>
+    
+      <%= f.text_field :url, :class => 'text-field form-control' %><br><br>
+   
+    <%= f.label :to_the_table, :class => 'control-label col-md-2' %>
+    
+      <%= f.text_area :to_the_table, :class => 'text-field form-control' %><br><br>
+   
+    <%= f.label :compensation_method, :class => 'control-label col-md-2' %>
+    
+      <%= f.text_area :compensation_method, :class => 'text-field form-control' %><br><br>
+    
+    <%= f.label :location, :class => 'control-label col-md-2' %>
+  
+      <%= f.text_field :location, :class => 'text-field form-control' %><br><br>
+    
+ <!--   <%#= f.label :tags, :class => 'control-label col-md-2' %>
+    
+      <%#= f.text_area :tags, :class => 'text-field form-control' %><br><br> -->
+    
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  posts_path, :class => 'btn btn-default' %></form>
+    </div>
+  </div></div></div></div>
+<% end %>
+</div>

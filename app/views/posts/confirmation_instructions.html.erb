@@ -1,0 +1,10 @@
+<p>Welcome <%= @name %>!</p>
+
+<p> Thanks for signing up to Launcherr, we are excited to see what you can achieve here </p>
+
+<p>To confirm your account click the link below:</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p> Regards, <br>
+	The team @ Launcherr </p>

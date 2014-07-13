@@ -1,0 +1,180 @@
+
+<title> <th><%= model_class.human_attribute_name(:project_name) %></th> | Launcherr Crowdsourcing Skills To Launch Ideas</title>
+			<!-- Project -->
+			<%- model_class = Post -%>
+	  <div class="page-body">
+
+				<style>
+					.image {
+						position: relative;
+						width: 100%; /* for IE 6 */
+					}
+
+					h2 {
+						position: absolute;
+						top: 200px;
+						left: 0;
+						width: 100%;
+						margin-top: 30px !important;
+					}
+				</style>
+				<!-- Cover Photo -->
+				<div class="top-area" >
+				  <th><%= model_class.human_attribute_name(:coverimage) %></th>
+				</div>
+                
+                <!-- LOGO/SQUARE PHOTO -->
+                
+		<img src="coverlogo.png"  alt="" style="top: -110px;width:200px; position: relative; margin-right: 265px; -webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-o-border-radius:5px;border-radius:5px; border: 5px solid #FFFFFF;"   align="right" />
+                
+                <!-- LOGO END -->
+
+				<div class="section-title project-title hhh" >
+				  <h2 class="<th><%= model_class.human_attribute_name(:project_name) %></th>"</h2>
+					<br>
+				</div>
+				<!-- end cover photo-->
+
+				<!-- MAIN CONTENT -->
+				<section id="portfolio">
+					<div id="portfolio-singlee" class="section-innere">
+						<div class="wrapper clearfix">
+
+						  <div class="main-content left-float">
+								
+                                
+                                <!-- VIDEO PITCH --><br><br>
+                                
+							  <div class="entry-media portfolio-media">
+									<iframe width="400" height="230" src="<th><%= model_class.human_attribute_name(:youtube_id) %></th>
+									" frameborder="0" scrolling="no"></iframe>
+
+							  </div>
+								<!-- FULL PITCH -->
+								<th><%= model_class.human_attribute_name(:full_pitch) %></th>
+						      
+						      <!-- COMPENSATION --></p>
+							<h6><strong> How  You Will Be Compensated?<br>
+								  <br>
+								</strong></h6>
+							 <p> <th><%= model_class.human_attribute_name(:compensation_method) %></th> </p>
+							    
+							    <!-- END COMPENSATION --><br><br> 
+
+							  <!-- insert "what can i bring to the table section" -->								
+						    </p>
+							<h6><strong> What can I bring to the table? </strong></h6>
+						   <p> <th><%= model_class.human_attribute_name(:to_the_table) %></th></p>
+<br>
+							    
+						      <!-- Main Content Join Team Button-->
+
+						      <br>
+						      <a href="#" class="sr-button sr-button5 big-button">JØIN TEAM</a>
+						      </a>
+						      <br><br>
+						    </p>
+
+							</div>
+							<p>
+
+								<!-- END MAIN CONTENT -->
+
+								<!-- PROJECT INFO // SIDEBAR -->
+							</p>
+							<aside class="right-float">
+
+<!-- Start Location -->
+								<div class="entry-content portfolio-content"> <h4><strong>  <th> <%= model_class.human_attribute_name(:project_name) %></th></strong></h4></div>
+									<h6> <i class="fa fa-map-marker"> </i> <th><%= model_class.human_attribute_name(:location) %></th></h6>
+									<p>
+<!-- END LOCATION -->
+<!-- START WEB URL -->
+<h6> <i class="fa fa-link"> </i> <th><%= model_class.human_attribute_name(:URL) %></th></h6>
+<!-- END WEB URL -->
+<!-- Post Date (date when idea was posted on launcherr) -->
+
+<h6> <i class="fa fa-clock-o"> </i> <th><%= model_class.human_attribute_name(:created_at) %></th>.</h6><br><br>
+
+
+									<!-- START QUICK PITCH -->
+                                   <th><%= model_class.human_attribute_name(:quick_pitch) %></th>
+									</p><br>
+ <!-- PULL DATA FROM SKILLS NEEDED -->
+						  <div class="entry-content portfolio-content"> <h4><strong> Team Needed</strong></h4></div>
+
+									<ul>
+										• Architect
+									</ul>
+									<ul>
+										• Timber Specialist
+									</ul>
+									<ul>
+										• 
+									Plumber
+									</ul>
+								  <ul>
+										• Electrician
+						  </ul>
+									<ul>
+										<p>
+										•	Handyman									</p>
+									</ul>
+									<br>
+                                    <a href="#" class="sr-button sr-button5 big-button">JØIN TEAM</a></h6>
+	
+						  <!-- END AVAILABLE POSITIONS -->
+                                
+                       
+								<br>
+                                <br><div class="entry-content portfolio-content"> <h4><strong> Project By</strong></h4></div>
+                               <!-- Project by  #insert users details-->
+						  <div class="project-by"><!-- pull display picture -->
+									<img src="files/uploads/G8ncMfNA.jpeg" width="200" height="201">
+
+						  </div> 
+								<!-- insert post authors name--><h6> Jake Baird</h6><br>
+								<!-- insert post authors 140 character bio--> I'm a full stack developer based in Sydney / NYC.  I'm Passionate about tech, nature and living off the grid. 
+
+						  <!-- START TAGS  -->
+								<div class="widget tag-widget">
+									<h6 class="widget-title"><strong>Tags</strong></h6>
+									<div class="tag-list">
+										<p><a href="#" title="design Tag" class="design-2">Log Cabin</a>
+										  <a href="#" title="fiji Tag" class="fiji">Eco Friendly</a>
+										  <a href="#" title="motion Tag" class="motion-2">Build</a>
+										  <a href="#" title="music Tag" class="music-2">Idea</a>
+										  <a href="#" title="photography Tag" class="photography-2">Snow</a>
+										  <a href="#" title="surf Tag" class="surf">Summer</a>
+									  </p>
+										<br> <br> <%= link_to post_path(post), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+									</div>
+								</div></div>
+								<!-- End tag-widget -->
+
+								<!-- SIDEBAR -->
+
+						</div>
+						<!-- END .wrapper -->
+
+						<div class="spacer spacer-big"></div>
+
+					</div>
+					<!-- END #portfolio-single .section-inner --><!-- END SECTION #portfolio-->
+					<!-- PORTFOLIO SECTION -->
+
+					
+                    
+
+		</div>
+		<!-- END .page-body -->
+
+		<!-- MODALS --><!-- /.modal -->
+
+		<!-- PAGEBODY -->
+
+	  </div>
+      
+      

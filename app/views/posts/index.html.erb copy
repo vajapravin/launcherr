@@ -1,0 +1,53 @@
+ 
+<!--CSS-->
+<link rel="stylesheet" href="css/gridGallery.css" /> 
+ <!-- PASSIONATE -->
+      <div id="passionate" class="horizontalsection text-light parallax-section">
+      <div class="horizontalinner wrapper align-center">
+        <h2> build cool things with cool people       </h2>
+        <div class="spacer spacer-small"></div>
+        <p>
+          <a href="./posts/new" class="scroll-to sr-button sr-button4 medium-button">Launch Idea</a>
+        </p>
+      </div>
+    </div>
+
+
+    <% @posts.each do |post| %>
+  
+
+
+<div id="grid">
+     <div class="container" style="padding-right:50px;padding-left:50px;">
+        
+        <div class="box" data-category="Drawings">
+            <div data-thumbnail="<%=post.logoimage.url %>" ></div>
+            
+            <div class="thumbnail-caption">
+                   <h5g>
+                <i class="fa fa-map-marker"> </i>  
+                  </h5g>
+            </div>
+                      <h6g>
+                   Quick Pitch 
+                      </h6g>
+         </div>
+      </div>
+</div>  
+<!-- SCRIPTS FOR THE PLUGIN -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/rotate-patch.js"></script>
+<script src="js/gridGallery.min.js"></script>
+
+   <%- end -%>
+
+
+
+ 
+
+
+
+
+
+
+          
