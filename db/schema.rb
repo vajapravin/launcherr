@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711182962) do
+ActiveRecord::Schema.define(version: 20140714211109) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -108,20 +108,6 @@ ActiveRecord::Schema.define(version: 20140711182962) do
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
-  create_table "receipts", force: true do |t|
-    t.integer  "recipient_id"
-    t.integer  "sender_id"
-    t.integer  "message_id"
-    t.boolean  "read",         default: false
-    t.boolean  "trash",        default: false
-    t.datetime "created_at"
-  end
-
-  add_index "receipts", ["recipient_id", "read", "message_id"], name: "by_read", using: :btree
-  add_index "receipts", ["recipient_id", "trash", "message_id"], name: "by_trashed", using: :btree
-  add_index "receipts", ["sender_id", "message_id"], name: "by_sender", using: :btree
-  add_index "receipts", ["sender_id", "recipient_id", "trash", "message_id"], name: "by_readable", using: :btree
-
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -142,6 +128,13 @@ ActiveRecord::Schema.define(version: 20140711182962) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
+  create_table "user_friends", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -159,8 +152,10 @@ ActiveRecord::Schema.define(version: 20140711182962) do
     t.string   "uid"
     t.string   "name"
     t.string   "username"
+    t.string   "ancestry"
   end
 
+  add_index "users", ["ancestry"], name: "index_users_on_ancestry", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree

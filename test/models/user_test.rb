@@ -19,6 +19,7 @@
 #  uid                    :string(255)
 #  name                   :string(255)
 #  username               :string(255)
+#  ancestry               :string(255)
 #
 
 require 'test_helper'

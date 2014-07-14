@@ -27,19 +27,17 @@
 #
 
 class Post < ActiveRecord::Base
-  belongs_to :user
+	belongs_to :user
  
-  attr_accessible :project_name, :quick_pitch, :coverimage, :logoimage, :full_pitch, :skills, :youtube_id, :to_the_table, :compensation_method, :location, :url, :content, :name, :tag_list
- 
- has_attached_file :coverimage 
- has_attached_file :logoimage 
+	attr_accessible :project_name, :quick_pitch, :coverimage, :logoimage, :full_pitch, :skills, :youtube_id, :to_the_table, :compensation_method, :location, :url, :content, :name, :tag_list
 
- validates_attachment :coverimage, content_type: { content_type: /\Aimage\/.*\Z/ }
- validates_attachment :logoimage, content_type: { content_type: /\Aimage\/.*\Z/ } 
- #validates_formatting_of :youtube_id, using: :url
-  # acts_as_votable 
-  #attr_accessible :content, :name, :tag_list
-acts_as_taggable
+	has_attached_file :coverimage 
+	has_attached_file :logoimage 
 
-
+	validates_attachment :coverimage, content_type: { content_type: /\Aimage\/.*\Z/ }
+	validates_attachment :logoimage, content_type: { content_type: /\Aimage\/.*\Z/ } 
+	#validates_formatting_of :youtube_id, using: :url
+	# acts_as_votable 
+	#attr_accessible :content, :name, :tag_list
+	acts_as_taggable
 end

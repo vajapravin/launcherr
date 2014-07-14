@@ -19,15 +19,22 @@
 #  uid                    :string(255)
 #  name                   :string(255)
 #  username               :string(255)
+#  ancestry               :string(255)
 #
 
 class User < ActiveRecord::Base
 
- acts_as_messageable :table_name => "messages",
+  acts_as_messageable :table_name => "messages",
                      :required => :body
-                     
+  
+  attr_accessible :id, :email
+  
+  has_ancestry
 
   has_many :messages                 # default [:topic, :body]
+
+  has_many :user_friends, dependent: :destroy
+  has_many :friends, through: :user_friends, source: 'UserFriend'
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
@@ -38,7 +45,6 @@ class User < ActiveRecord::Base
   #->Prelang (user_login/devise)
   has_many :posts
 
- 
 
                       
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
@@ -82,4 +88,5 @@ def mailboxer_email(object)
   #if false
   #return nil
 end
+
 end

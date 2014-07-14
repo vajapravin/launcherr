@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="content-wrap margin-reset mg50">
+           <!-- messages -->
+           <div class="messages-box">
+
+            <div class="borders">
+                <div class="col-md-4 listWrapper">
+                    <div class="innerBox" id="contacts-search">
+                        <form autocomplete="off" class="form-inline margin-none">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control" id="contacts-search-input" placeholder="Filter Contacts ..." type="text">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-xs pull-right"><i class="glyphicon glyphicon-search"></i></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="bg-gray strong border-top border-bottom innerBox-half text-center">Contacts (11)</div>
+
+                    <ul class="list-unstyled p0" id="messages-stack-list">
+                        <li class="prepare-message border-bottom" id="2">
+                            <div class="media innerBox">
+                                <div class="media-object pull-left hidden-phone">
+                                    <a href="#">
+                                        <img src="http://localhost/messages/images/albert.jpg" width="50" height="50" alt="User">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <div><span class="strong">Albert Toss</span></div>
+                                    <div id="unreader-counter2"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>    
+                </div>
+
+                <div class="col-md-8 messageWrapper">
+                    <div id="loadingDiv"></div>
+                    <div id="text-messages-request">
+                        <p class="innerBox">Read your messages by selecting a contact on the left</p>
+                    </div>
+                </div>
+
+            </div>        </div>
+            <p style="padding-top: 5px; color: #aaa;">Hint: Type [unread] to filter unread messages</p>
+            <!-- // messages -->
+        </div>
+    </div><!-- // row -->
+</div><!-- // container -->

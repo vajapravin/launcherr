@@ -81,4 +81,5 @@ end
     get    "account" => "devise/registrations#edit",   as: :edit_user_registration
   end
 
+  resources :messages, only: [:index]
 end
