@@ -2711,8 +2711,9 @@ img {
   overflow: auto;
 }
 
-
-
+#grid {
+	width: 1250px !important;
+}
 
 
 

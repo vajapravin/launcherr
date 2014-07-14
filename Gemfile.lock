@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 063e00b533d4d6c83052b04e7f9cfd86fb68f8fe
+  revision: 168d72e7f5d705cd25373775db2c9efd910b7a95
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -69,7 +69,7 @@ GIT
 
 GIT
   remote: git://github.com/twbs/bootstrap-sass.git
-  revision: 7d6bf1994a42c3ffd2c45f52fad6fda7884b2da9
+  revision: d5625c907168b6311be122b99d89614e02448475
   specs:
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
