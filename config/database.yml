@@ -13,7 +13,7 @@ development:
   adapter: mysql2
   database: launcherr
   username: root
-  password: seven
+  password: k1
   host: localhost
 
 production:
@@ -22,7 +22,7 @@ production:
   database: launcherr
   pool: 5
   username: root
-  password: seven
+  password: k1
   host: localhost
 #planbit_load
 #planbit3

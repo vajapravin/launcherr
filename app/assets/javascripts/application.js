@@ -19,4 +19,6 @@
 //= gridGallery.js
 //= gridGallery.min
 //= jquery.modernizr.min.js
-//= require_tree .
+//= require_tree "."
+//= stub "jquery.nicescroll.min.js"
+//= stub "jquery.messages.js"
